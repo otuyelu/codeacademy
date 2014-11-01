@@ -11,3 +11,8 @@ for (var i = 0; i < text.length; i ++) {
         } 
     }
 }
+if (hits.length<1) {
+    console.log("Your name wasn't found!");
+} else {
+    console.log(hits);
+}
