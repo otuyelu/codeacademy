@@ -1,4 +1,4 @@
-// Building an Address Book 4/6
+// Building an Address Book 6/6
 var bob = {
     firstName: "Bob",
     lastName: "Jones",
@@ -33,3 +33,12 @@ function search(lastName){
         }
 	}
 }
+function add(firstName, lastName, email, phoneNumber){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.phoneNumber = phoneNumber;
+    contacts[contacts.length] = this
+}
+jide = new add("jide","yelu","jouy@yahoo.com", "hoiiwueue");
+list();
