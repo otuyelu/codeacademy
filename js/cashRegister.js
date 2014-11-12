@@ -1,29 +1,36 @@
-// Building a Cash Register 4/7
+// Building a Cash Register 5/7
 var cashRegister = {
     total:0,
-    add: function(itemCost){
-        this.total += itemCost;
+    lastTransactionAmount: 0,
+    //Dont forget to add your property
+    add: function(itemCost) {
+        this.total +=  itemCost;
+        this.lastTransactionAmount =  itemCost; 
     },
     scan: function(item,quantity) {
-        if (typeof(quantity) === "number") {
-            this.quantity = quantity;
-        }else{
-            this.quantity = 1;
-        }
         switch (item) {
-        case "eggs": this.add(0.98 * this.quantity); break;
-        case "milk": this.add(1.23 * this.quantity); break;
-        case "magazine": this.add(4.99 * this.quantity); break;
-        case "chocolate": this.add(0.45 * this.quantity); break;
-        }
-    }
+        case "eggs": this.add(0.98 * quantity); break;
+        case "milk": this.add(1.23 * quantity); break;
+        case "magazine": this.add(4.99 * quantity); break;
+        case "chocolate": this.add(0.45 * quantity); break;
+        }        
+        return true;
+    },
+    //Add the voidLastTransaction Method here
+    voidLastTransaction: function() {
+        this.total -= this.lastTransactionAmount;
+        this.lastTransactionAmount = 0;
+        },
+    
 };
 
-// scan each item 4 times
-cashRegister.scan("eggs", 4);
-cashRegister.scan("milk", 4);
-cashRegister.scan("magazine", 4);
-cashRegister.scan("chocolate", 4);
+cashRegister.scan('eggs',1);
+cashRegister.scan('milk',1);
+cashRegister.scan('magazine',1);
+cashRegister.scan('chocolate',4);
 
+//Void the last transaction and then add 3 instead
+cashRegister.voidLastTransaction();
+cashRegister.scan('chocolate',3);
 //Show the total bill
 console.log('Your bill is '+cashRegister.total);
