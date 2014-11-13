@@ -1,7 +1,7 @@
 --------------------script.js------------------------
 $(document).ready(function() {
     $('div').mouseenter(function() {
-        $('div').hide();
+        $('div').fadeTo('fast', 1);
     });
 });
 ----------------index.html-------------------------------
