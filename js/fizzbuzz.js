@@ -1,4 +1,4 @@
-/* if the number is divisible by 3 print "Fizz";if the number is divisible print "Buzz";
+/* if the number is divisible by 3 print "Fizz";if the number is divisible by 5 print "Buzz";
 if the number is divisible by 3 AND 5? That's right! "FizzBuzz"!*/
 //Introduction to Objects I 3/33
 
